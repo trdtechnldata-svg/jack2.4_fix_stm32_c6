@@ -1,0 +1,60 @@
+BƯỚC 1: Tải và Cài đặt Git trên máy tính
+Truy cập trang chủ git-scm.com và tải phiên bản Git dành cho Windows.
+
+Trong quá trình bấm Next để cài đặt, hãy chú ý chọn các thiết lập tối ưu sau:
+
+Môi trường PATH: Chọn "Git from the command line and also 3rd-party software".
+
+Trình soạn thảo mặc định: Chọn Visual Studio Code.
+
+Tên nhánh mặc định (Initial branch): Chọn ghi đè và đặt tên là main.
+
+Chương trình SSH: Chọn "Use bundled OpenSSH".
+
+Các mục còn lại giữ nguyên mặc định và bấm Install cho đến khi hoàn tất.
+
+Tắt và mở lại VS Code để hệ thống nhận diện lệnh Git.
+
+BƯỚC 2: Cấu hình danh tính Git (Làm một lần duy nhất)
+Mở Terminal tích hợp trong VS Code (bằng phím tắt Ctrl + ~) và gõ cấu hình tên và email trùng với tài khoản GitHub của bạn:
+
+Bash
+git config --global user.name "trdtechnldata-svg"
+git config --global user.email "email_tai_khoan_github_cua_ban@gmail.com"
+BƯỚC 3: Khởi tạo Git cho thư mục Project trên máy
+Trên VS Code, chọn File > Open Folder... và trỏ đến thư mục chứa mã nguồn dự án của bạn (ví dụ thư mục chứa file .ino).
+
+Mở Terminal (Ctrl + ~) và chạy lần lượt 3 lệnh sau để đóng gói bản code đầu tiên:
+
+Bash
+git init
+git add .
+git commit -m "Initial commit project"
+BƯỚC 4: Tạo Kho lưu trữ (Repository) trên GitHub
+Truy cập vào GitHub.com và đăng nhập vào tài khoản của bạn (trdtechnldata-svg).
+
+Ở góc trên bên phải, bấm dấu + > New repository.
+
+Đặt tên Repository (ví dụ: jack2.4_fix_gd32).
+
+Giữ nguyên chế độ Public/Private tùy ý, không tích chọn tạo file README hay license, sau đó bấm Create repository.
+
+BƯỚC 5: Liên kết và Đẩy code lên GitHub
+Copy 3 dòng lệnh liên kết mà GitHub cung cấp, dán trực tiếp vào Terminal của VS Code và bấm Enter:
+
+Bash
+git remote add origin https://github.com/trdtechnldata-svg/jack2.4_fix_gd32.git
+git branch -M main
+git push -u origin main
+(Nếu lần đầu push, GitHub sẽ bật cửa sổ trình duyệt yêu cầu bạn xác thực đăng nhập, bạn chỉ cần bấm cho phép là code sẽ tự động bay lên mây).
+
+BƯỚC 6: Quy trình cập nhật code từ các lần sau
+Từ lần sửa code sau trở đi, bạn không cần gõ lệnh dài dòng nữa mà chỉ cần thao tác nhanh qua giao diện VS Code:
+
+Bấm Ctrl + Shift + G (mở tab Source Control bên trái).
+
+Nhấn dấu + để chọn các file thay đổi (Stage Changes).
+
+Gõ nội dung mô tả ngắn gọn vào ô trống rồi bấm Commit.
+
+Bấm nút Sync Changes (hoặc Push) để đồng bộ code lên GitHub.
